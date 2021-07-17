@@ -15,7 +15,7 @@ PREFIX = '!'
 
 OWNER_IDS = [485054727755792410]
 
-COGS = ["reminders", "tasks", "help"]
+COGS = ["reminders", "tasks", "ayuda", "meta"]
 
 class Ready(object):
   def __init__(self):

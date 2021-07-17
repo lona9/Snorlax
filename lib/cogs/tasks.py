@@ -3,11 +3,8 @@ from apscheduler.triggers.cron import CronTrigger
 from discord.ext.commands import command
 from datetime import datetime
 from discord.ext import tasks
-from datetime import timedelta
 from discord.utils import get
 from..db import db
-import random
-import pandas as pd
 
 class Tasks(Cog):
   def __init__(self, bot):

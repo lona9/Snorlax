@@ -9,5 +9,6 @@ CREATE TABLE IF NOT EXISTS reminders (
 CREATE TABLE IF NOT EXISTS tasks (
   TaskID VARCHAR PRIMARY KEY,
   TaskText VARCHAR,
-  TaskStatus VARCHAR
+  TaskStatus VARCHAR,
+  TaskCategory VARCHAR DEFAULT "Unsorted"
 );

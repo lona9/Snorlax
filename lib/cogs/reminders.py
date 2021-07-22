@@ -47,7 +47,7 @@ class Reminders(Cog):
   async def check_reminder(self):
     stored_reminders = db.column("SELECT ReminderID FROM reminders")
 
-    if stored_reminders == ():
+    if stored_reminders == []:
         self.check_reminder.stop()
 
     else:

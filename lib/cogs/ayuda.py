@@ -17,7 +17,7 @@ class Ayuda(Cog):
     embed = Embed()
 
     fields = [("Hi!", "I'm Snorlax, and I'll be your personal assistant from now on! Read the commands below to know how to interact with me.", False),
-                ("You can use the following commands for tasks:", "**!task (or !t)**: use this command to add a task to your list of pending tasks.\n**!pending (or !p)**: get the list of pending tasks, and move them to the done list, reacting to the message.\n**!completed (or !c)**: get the list of completed tasks.\n**!pc**: or *pending clear*, clears your entire pending list.\n**!cc**: or *completed clear*, clears your entire completed list.", False),
+                ("You can use the following commands for tasks:", "**!task (or !t)**: use this command to add a task to your list of pending tasks.\n**!pending (or !p)**: get the list of pending tasks, and move them to the done list, reacting to the message.\n**!completed (or !c)**: get the list of completed tasks.\n**!pc**: or *pending clear*, clears your entire pending list.\n**!cc**: or *completed clear*, clears your entire completed list.\n**!categories**: get the list of your categories currently used on your pending or completed lists.", False),
                 ("You can use the following command for reminders:", "**!reminder (or !r)**: type the command and the time you want the reminder to be sent and your message. input takes seconds (s), minutes (m), hours (h) and days (d) with a whole number, and just one at a time, for example: *!r 2h reply to emails* or *!r 1d kristen's birthday*. You will receive the reminder in the same channel you sent the command.", False)]
 
     for name, value, inline in fields:

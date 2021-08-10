@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS reminders (
   ReminderTime DATE,
   ReminderText VARCHAR,
   ReminderAuthor VARCHAR,
-  ReminderChannel NUMERIC
+  ReminderChannel VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS tasks (

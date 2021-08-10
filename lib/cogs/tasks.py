@@ -14,7 +14,7 @@ class Tasks(Cog):
   async def set_task(self, ctx, *args):
       tasktext = str(" ".join(args))
 
-      taskid = datetime.now().strftime("%d/%m %H/%M/%S")
+      taskid = datetime.now().strftime("%d/%m %H:%M:%S")
 
       taskstatus = "pending"
 
@@ -120,7 +120,7 @@ class Tasks(Cog):
 
             db.execute("UPDATE tasks SET TaskCategory = ? WHERE TaskText = ?", new_category, task_message)
 
-            await channel.send(f"This task has now been saved under the **{category}** category.")
+            await channel.send(f"This task has now been saved under the **{new_category}** category.")
 
         except:
             await channel.send("Time's up! Nothing was changed.")

@@ -12,26 +12,31 @@ class Tasks(Cog):
 
   @command(aliases=["t"])
   async def set_task(self, ctx, *args):
-      tasktext = str(" ".join(args))
+      if args == []:
+          await ctx.send("Please send a valid message for your task!")
 
-      taskid = datetime.now().strftime("%d/%m %H:%M:%S")
+      else:
+          tasktext = str(" ".join(args))
 
-      taskstatus = "pending"
+          taskid = datetime.now().strftime("%d/%m %H:%M:%S")
 
-      await ctx.send("Please enter a category for this task:")
+          taskstatus = "pending"
 
-      try:
-          message = await self.bot.wait_for('message', timeout=20, check=lambda message: message.author == ctx.author)
+          await ctx.send("Please enter a category for this task:")
 
-          category = str(message.content)
+          try:
+              message = await self.bot.wait_for('message', timeout=20, check=lambda message: message.author == ctx.author)
 
-          db.execute("INSERT OR IGNORE INTO tasks (TaskID, TaskText, TaskStatus, TaskCategory) VALUES (?, ?, ?, ?)", taskid, tasktext, taskstatus, category)
+              category = str(message.content)
 
-          db.commit()
+              db.execute("INSERT OR IGNORE INTO tasks (TaskID, TaskText, TaskStatus, TaskCategory) VALUES (?, ?, ?, ?)", taskid, tasktext, taskstatus, category)
 
-          await ctx.send(f"Task has been saved under the **{category}** category.")
-      except:
-          await ctx.send("Task has been saved with no category.")
+              db.commit()
+
+              await ctx.send(f"Task has been saved under the **{category}** category.")
+
+          except:
+              await ctx.send("Task has been saved with no category.")
 
 
   @command(aliases=["p", "pending"])

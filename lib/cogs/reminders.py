@@ -47,7 +47,7 @@ class Reminders(Cog):
   async def check_reminder(self):
     stored_reminders = db.column("SELECT ReminderID FROM reminders")
 
-    if stored_reminders == []:
+    if stored_reminders == ():
         self.check_reminder.stop()
 
     else:
@@ -80,7 +80,7 @@ class Reminders(Cog):
                     db.execute("DELETE FROM reminders WHERE ReminderID = ?", reminder_id)
 
                     db.commit()
-                    
+
                 except:
                     pass
 
